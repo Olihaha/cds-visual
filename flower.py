@@ -48,6 +48,6 @@ input_filename = "/Users/oliverkjoeller/Desktop/visual_analytics/cds-visual/data
 
 top_5_filenames = find_similar_images(input_filename, folder_path)
 
-print("The 5 most similar images to {} are:".format(input_filename))
+print("The 5 most similar images to {}".format(input_filename))
 for filename in top_5_filenames:
     print(filename)
