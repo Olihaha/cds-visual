@@ -3,16 +3,12 @@ import numpy as np
 import os
 import random
 
-#path to folder
 folder_path = "/Users/oliverkjoeller/Desktop/visual_analytics/cds-visual/data/flowers/"
 image_filenames = os.listdir(folder_path)
 
-#Choose a random image from folder
 random_image_filename = np.random.choice(image_filenames)
-# Load random image
 random_image_path = os.path.join(folder_path, random_image_filename)
 random_image = cv2.imread(random_image_path)
-# Calculate the color histogram of random image
 random_hist = cv2.calcHist([random_image], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256])
 random_hist = cv2.normalize(random_hist, random_hist).flatten()
 similarity_scores = []
